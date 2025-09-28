@@ -2,13 +2,15 @@ function setFontSize(size) {
   let root = document.body;
 
   if (window.innerWidth > 768 && !root.classList.contains("mobile")) {
+    // 電腦版
     if (size === 'small') root.style.fontSize = "16px";
     else if (size === 'medium') root.style.fontSize = "18px";
     else if (size === 'large') root.style.fontSize = "20px";
   } else {
-    if (size === 'small') root.style.fontSize = "18px";
-    else if (size === 'medium') root.style.fontSize = "20px";
-    else if (size === 'large') root.style.fontSize = "22px";
+    // 手機版 ✅ 放大
+    if (size === 'small') root.style.fontSize = "28px";
+    else if (size === 'medium') root.style.fontSize = "36px";
+    else if (size === 'large') root.style.fontSize = "44px";
   }
   localStorage.setItem('readerFontSize', size);
 }
@@ -24,8 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   if (isMobile) document.body.classList.add("mobile");
 
-  let savedSize = localStorage.getItem('readerFontSize');
-  if (!savedSize) savedSize = 'medium';
+  let savedSize = localStorage.getItem('readerFontSize') || 'medium';
   setFontSize(savedSize);
 
   let savedTheme = localStorage.getItem('readerTheme') || 'dark';

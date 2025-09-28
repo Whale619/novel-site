@@ -60,13 +60,14 @@ def write_chapters(chapters):
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
   <title>{title}</title>
   <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-<!-- 🔹 頂部：返回目錄 / 字體大小 / 主題切換 -->
+<!-- 控制列 -->
 <div class="controls">
   <div class="controls-left">
     <a href="../index.html">返回目錄</a>
@@ -79,21 +80,19 @@ def write_chapters(chapters):
   </div>
 </div>
 
-<!-- 🔹 上一章 / 下一章（放在章節標題上方） -->
+<!-- 上一章 / 下一章（標題上方） -->
 <div class="nav chapter-nav">
   {prev_link}
   {next_link}
 </div>
 
-<!-- 章節標題 -->
 <h1>{title}</h1>
 
-<!-- 章節內容 -->
 <div class="content">
 {content}
 </div>
 
-<!-- 底部的上一章 / 下一章 -->
+<!-- 再次上一章 / 下一章 -->
 <div class="nav chapter-nav">
   {prev_link}
   {next_link}
@@ -120,6 +119,7 @@ def write_index(chapters):
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <title>화산귀환 - 劍尊歸來</title>
   <script src="js/main.js" defer></script>
@@ -127,7 +127,7 @@ def write_index(chapters):
 </head>
 <body>
 
-<!-- 🔹 頂部：目錄控制列 -->
+<!-- 控制列 -->
 <div class="controls">
   <div class="controls-left">
     <button onclick="toggleOrder()">切換正序/倒序</button>
