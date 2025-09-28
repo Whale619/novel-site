@@ -200,20 +200,4 @@ button:hover { background: #444; }
     text-indent: 0 !important;
     line-height: 1.8;
   }
-
-  /* 手機版：控制列移到最上方並置中 */
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-  }
-  .controls-left {
-    flex: 1;
-    text-align: left;
-  }
-  .controls-right {
-    flex: 1;
-    text-align: right;
-  }
 }
