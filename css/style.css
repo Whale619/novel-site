@@ -163,7 +163,7 @@ button:hover { background: #444; }
   /* 上一章 / 下一章 小一點 */
   .nav a, .nav span {
     font-size: 18px !important;   /* 比返回目錄小 */
-    padding: 6px 12px;            /* 小一點的按鈕 */
+    padding: 6px 10px;            /* 小一點的按鈕 */
   }
 
   .book-info {
@@ -197,6 +197,26 @@ button:hover { background: #444; }
     text-align: left !important;
     text-indent: 0 !important;
     line-height: 1.8;
+  }
+
+  /* 上下章按鈕放在標題上方，置中顯示 */
+  .chapter-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 10px 0;
+    gap: 15px;
+  }
+
+  .chapter-header a, .chapter-header span {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+
+  /* 返回目錄不要換行 */
+  .nav a {
+    white-space: nowrap;
   }
 
 }
