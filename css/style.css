@@ -154,7 +154,7 @@ button:hover { background: #444; }
   }
 
   #chapter-list { grid-template-columns: 1fr !important; }
-  #chapter-list li { font-size: 22px; }  /* 手機章節目錄字體固定 */
+  #chapter-list li { font-size: 18px; }  /* 手機章節目錄字體固定 */
 
   .book-info {
     flex-direction: column;
