@@ -49,12 +49,13 @@ body.light button:hover { background: #ddd; }
 }
 .meta { flex: 1; color: inherit; }
 .meta h1 { margin-top: 0; font-size: 1.8em; }
-.meta p { margin: 5px 0; }
+/* 首頁的書名標題靠左 */
 .meta h1 {
   text-align: left !important;
   font-size: 1.6em;
   margin-left: 40px;   
 }
+.meta p { margin: 5px 0; }
 
 /* 章節清單 */
 #chapter-list {
@@ -145,6 +146,11 @@ button:hover { background: #444; }
 
 /* 響應式：手機 */
 @media (max-width: 768px) {
-  body { font-size: 18px; }   /* 手機預設用小字 */
-  #chapter-list { grid-template-columns: 1fr !important; } /* 單欄 */
+  body { 
+    font-size: 20px;   /* ✅ 手機預設至少 20px */
+    line-height: 2.0;  
+  }
+  #chapter-list { 
+    grid-template-columns: 1fr !important; /* 手機單欄 */
+  }
 }

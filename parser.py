@@ -21,12 +21,18 @@ def clean_line(line: str) -> str | None:
     return replace_quotes(line)
 
 def parse_chapter_title(line: str) -> str | None:
+    # 特殊情況：序
+    if re.match(r'^\s*序\s*$', line):
+        return "序"
+
+    # 一般章節
     m = re.match(r".*?(?:第)?(\d+)(章|話|回)([^一-龥]*)(.*)", line)
     if m:
         num = m.group(1)
         text = m.group(4).strip()
         return f"第{num}章 - {text}" if text else f"第{num}章"
     return None
+
 
 def process_txt(file_path: Path):
     chapters = []
