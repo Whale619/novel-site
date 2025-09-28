@@ -147,9 +147,6 @@ def write_index(chapters):
     <button onclick="toggleOrder()">切換正序/倒序</button>
   </div>
   <div class="controls-right">
-    <button onclick="setFontSize('small')">小</button>
-    <button onclick="setFontSize('medium')">中</button>
-    <button onclick="setFontSize('large')">大</button>
     <button onclick="toggleTheme()">切換主題</button>
   </div>
 </div>
