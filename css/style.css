@@ -154,10 +154,16 @@ button:hover { background: #444; }
   #chapter-list { grid-template-columns: 1fr !important; }
   #chapter-list li { font-size: 18px; }
 
-  /* 返回目錄 / 上一章 / 下一章 固定大小 */
+  /* 返回目錄固定大小 */
+  .controls-left a {
+    font-size: 22px !important;   /* 固定字體大小 */
+    padding: 10px 16px;            /* 固定按鈕大小 */
+  }
+
+  /* 上一章 / 下一章 小一點 */
   .nav a, .nav span {
-    font-size: 20px;
-    padding: 12px 20px;
+    font-size: 18px !important;   /* 比返回目錄小 */
+    padding: 6px 12px;            /* 小一點的按鈕 */
   }
 
   .book-info {
