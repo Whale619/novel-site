@@ -146,10 +146,15 @@ button:hover { background: #444; }
 
 /* 🔹 響應式：手機 */
 @media (max-width: 768px) {
-  body { font-size: 20px; line-height: 1.8; }
+  body { font-size: 28px; line-height: 1.8; }
+
+  /* 小說目錄標題 */
+  h2 {
+    font-size: 24px;   /* ✅ 手機小說目錄標題小一點 */
+  }
 
   #chapter-list { grid-template-columns: 1fr !important; }
-  #chapter-list li { font-size: 20px; }  /* ✅ 章節目錄字體小一點 */
+  #chapter-list li { font-size: 22px; }  /* ✅ 章節目錄字體小一點 */
 
   .book-info {
     flex-direction: column;
@@ -157,7 +162,7 @@ button:hover { background: #444; }
     text-align: center;
   }
   .meta h1 {
-    font-size: 28px;   /* ✅ 書名標題小一點 */
+    font-size: 26px;   /* ✅ 書名標題小一點 */
     text-align: left;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -167,6 +172,6 @@ button:hover { background: #444; }
     margin: 0 auto 15px auto;
   }
   .meta p {
-    font-size: 20px;  /* ✅ 簡介文字小一點 */
+    font-size: 18px;  /* ✅ 簡介文字小一點 */
   }
 }
