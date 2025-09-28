@@ -156,7 +156,7 @@ button:hover { background: #444; }
 
   /* 返回目錄固定大小 */
   .controls-left a {
-    font-size: 22px !important;   /* 固定字體大小 */
+    font-size: 20px !important;   /* 固定字體大小 */
     padding: 10px 16px;            /* 固定按鈕大小 */
   }
 
