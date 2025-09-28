@@ -156,32 +156,15 @@ button:hover { background: #444; }
 
   /* 返回目錄固定大小 */
   .controls-left a {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    font-size: 18px !important;   /* 固定字體大小 */
-    padding: 8px 20px;            /* 固定按鈕大小 */
-=======
-    font-size: 22px !important;   /* 固定字體大小 */
-    padding: 10px 16px;            /* 固定按鈕大小 */
->>>>>>> Stashed changes
-=======
-    font-size: 22px !important;   /* 固定字體大小 */
-    padding: 10px 16px;            /* 固定按鈕大小 */
->>>>>>> Stashed changes
+    font-size: 18px !important;
+    padding: 8px 20px;
+    white-space: nowrap;   /* 不要換行 */
   }
 
   /* 上一章 / 下一章 小一點 */
   .nav a, .nav span {
-    font-size: 18px !important;   /* 比返回目錄小 */
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    padding: 6px 10px;            /* 小一點的按鈕 */
-=======
-    padding: 6px 12px;            /* 小一點的按鈕 */
->>>>>>> Stashed changes
-=======
-    padding: 6px 12px;            /* 小一點的按鈕 */
->>>>>>> Stashed changes
+    font-size: 18px !important;
+    padding: 6px 10px;
   }
 
   .book-info {
@@ -211,45 +194,26 @@ button:hover { background: #444; }
     margin: 20px 0;
   }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   /* 章節內文靠左 */
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   .content p {
     text-align: left !important;
     text-indent: 0 !important;
     line-height: 1.8;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   }
 
-  /* 上下章按鈕放在標題上方，置中顯示 */
-  .chapter-header {
+  /* 手機版：控制列移到最上方並置中 */
+  .controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
     margin: 10px 0;
-    gap: 15px;
   }
-
-  .chapter-header a, .chapter-header span {
-    font-size: 20px;
-    padding: 6px 12px;
+  .controls-left {
+    flex: 1;
+    text-align: left;
   }
-
-  /* 返回目錄不要換行 */
-  .nav a {
-    white-space: nowrap;
-=======
->>>>>>> Stashed changes
+  .controls-right {
+    flex: 1;
+    text-align: right;
   }
-
-=======
-  }
-
->>>>>>> Stashed changes
 }
