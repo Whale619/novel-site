@@ -21,8 +21,10 @@ def clean_line(line: str) -> str | None:
     return replace_quotes(line)
 
 def parse_chapter_title(line: str) -> str | None:
+    # 特殊情況：序
     if re.match(r'^\s*序\s*$', line):
         return "序"
+    # 一般章節
     m = re.match(r".*?(?:第)?(\d+)(章|話|回)([^一-龥]*)(.*)", line)
     if m:
         num = m.group(1)
@@ -60,18 +62,13 @@ def write_chapters(chapters):
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
   <title>{title}</title>
   <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-<div class="nav">
-  {prev_link}
-  {next_link}
-</div>
-
+<!-- ✅ 控制列（手機版會顯示在最上方） -->
 <div class="controls">
   <div class="controls-left">
     <a href="../index.html">返回目錄</a>
@@ -84,11 +81,18 @@ def write_chapters(chapters):
   </div>
 </div>
 
+<!-- 上一章 / 下一章 -->
+<div class="nav">
+  {prev_link}
+  {next_link}
+</div>
+
 <h1>{title}</h1>
 <div class="content">
 {content}
 </div>
 
+<!-- 底部的上一章 / 下一章 -->
 <div class="nav">
   {prev_link}
   {next_link}
@@ -99,8 +103,8 @@ def write_chapters(chapters):
 </body>
 </html>"""
     for idx, (title, content) in enumerate(chapters, start=1):
-        prev_link = f'<a href="{idx-1}.html">上一章</a>' if idx > 1 else '<span>上一章</span>'
-        next_link = f'<a href="{idx+1}.html">下一章</a>' if idx < len(chapters) else '<span>下一章</span>'
+        prev_link = f'<a href="{idx-1}.html">⬅ 上一章</a>' if idx > 1 else '<span>⬅ 上一章</span>'
+        next_link = f'<a href="{idx+1}.html">下一章 ➡</a>' if idx < len(chapters) else '<span>下一章 ➡</span>'
         chapter_html = html_template.format(
             title=title,
             content="<p>" + "</p><p>".join(content.split("\n")) + "</p>",
@@ -115,13 +119,26 @@ def write_index(chapters):
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <title>화산귀환 - 劍尊歸來</title>
   <script src="js/main.js" defer></script>
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
+
+<!-- ✅ 控制列（手機版會顯示在最上方） -->
+<div class="controls">
+  <div class="controls-left">
+    <button onclick="toggleOrder()">切換正序/倒序</button>
+  </div>
+  <div class="controls-right">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('medium')">中</button>
+    <button onclick="setFontSize('large')">大</button>
+    <button onclick="toggleTheme()">切換主題</button>
+  </div>
+</div>
+
 <div class="book-info">
   <div class="cover">
     <img src="img/cover.jpg" alt="封面">
@@ -142,14 +159,6 @@ def write_index(chapters):
 </div>
 
 <h2>小說目錄</h2>
-<div class="controls">
-  <div class="controls-left">
-    <button onclick="toggleOrder()">切換正序/倒序</button>
-  </div>
-  <div class="controls-right">
-    <button onclick="toggleTheme()">切換主題</button>
-  </div>
-</div>
 <ul id="chapter-list">
 """
     for idx, (title, _) in enumerate(chapters, start=1):
