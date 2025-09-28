@@ -8,9 +8,9 @@ function setFontSize(size) {
     else if (size === 'large') root.style.fontSize = "20px";
   } else {
     // 手機版 放大
-    if (size === 'small') root.style.fontSize = "20px";
-    else if (size === 'medium') root.style.fontSize = "22px";
-    else if (size === 'large') root.style.fontSize = "24px";
+    if (size === 'small') root.style.fontSize = "18px";
+    else if (size === 'medium') root.style.fontSize = "20px";
+    else if (size === 'large') root.style.fontSize = "22px";
   }
   localStorage.setItem('readerFontSize', size);
 }
