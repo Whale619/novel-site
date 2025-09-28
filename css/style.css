@@ -149,7 +149,7 @@ button:hover { background: #444; }
   body { font-size: 28px; line-height: 1.8; }
 
   #chapter-list { grid-template-columns: 1fr !important; }
-  #chapter-list li { font-size: 24px; }  /* ✅ 章節目錄字體小一點 */
+  #chapter-list li { font-size: 20px; }  /* ✅ 章節目錄字體小一點 */
 
   .book-info {
     flex-direction: column;
@@ -167,6 +167,6 @@ button:hover { background: #444; }
     margin: 0 auto 15px auto;
   }
   .meta p {
-    font-size: 24px;  /* ✅ 簡介文字小一點 */
+    font-size: 20px;  /* ✅ 簡介文字小一點 */
   }
 }
