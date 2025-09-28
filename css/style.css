@@ -146,7 +146,7 @@ button:hover { background: #444; }
 
 /* 🔹 響應式：手機 */
 @media (max-width: 768px) {
-  body { font-size: 28px; line-height: 1.8; }
+  body { font-size: 20px; line-height: 1.8; }
 
   #chapter-list { grid-template-columns: 1fr !important; }
   #chapter-list li { font-size: 20px; }  /* ✅ 章節目錄字體小一點 */
