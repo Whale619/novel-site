@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
-  <title>화산귀환 - 小說翻譯</title>
+  <title>화산귀환 - 劍尊歸來</title>
   <script src="js/main.js" defer></script>
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
@@ -28,7 +28,17 @@
 </div>
 
 <h2>小說目錄</h2>
-<button onclick="toggleOrder()">切換正序/倒序</button>
+<div class="controls">
+  <div class="controls-left">
+    <button onclick="toggleOrder()">切換正序/倒序</button>
+  </div>
+  <div class="controls-right">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('medium')">中</button>
+    <button onclick="setFontSize('large')">大</button>
+    <button onclick="toggleTheme()">切換主題</button>
+  </div>
+</div>
 <ul id="chapter-list">
 <li><a href="chapters/1.html">第1章 - 這到底是什麼情況 (1)</a></li>
 <li><a href="chapters/2.html">第2章 - 這到底什麼情況?(2)</a></li>
