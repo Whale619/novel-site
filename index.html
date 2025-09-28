@@ -2,13 +2,26 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <title>화산귀환 - 劍尊歸來</title>
   <script src="js/main.js" defer></script>
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
+
+<!-- 🔹 頂部：目錄控制列 -->
+<div class="controls">
+  <div class="controls-left">
+    <button onclick="toggleOrder()">切換正序/倒序</button>
+  </div>
+  <div class="controls-right">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('medium')">中</button>
+    <button onclick="setFontSize('large')">大</button>
+    <button onclick="toggleTheme()">切換主題</button>
+  </div>
+</div>
+
 <div class="book-info">
   <div class="cover">
     <img src="img/cover.jpg" alt="封面">
@@ -29,14 +42,6 @@
 </div>
 
 <h2>小說目錄</h2>
-<div class="controls">
-  <div class="controls-left">
-    <button onclick="toggleOrder()">切換正序/倒序</button>
-  </div>
-  <div class="controls-right">
-    <button onclick="toggleTheme()">切換主題</button>
-  </div>
-</div>
 <ul id="chapter-list">
 <li><a href="chapters/1.html">序</a></li>
 <li><a href="chapters/2.html">第1章 - 這到底是什麼情況 (1)</a></li>
