@@ -193,4 +193,10 @@ button:hover { background: #444; }
     margin: 20px 0;
   }
 
+  .content p {
+    text-align: left !important;
+    text-indent: 0 !important;
+    line-height: 1.8;
+  }
+
 }
