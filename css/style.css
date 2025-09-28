@@ -153,6 +153,10 @@ button:hover { background: #444; }
   #chapter-list { grid-template-columns: 1fr !important; }
   #chapter-list li { font-size: 18px; }/* 手機章節目錄字體固定 */
 
+  .nav a, .nav span {
+    font-size: 24px;   /* 返回目錄字體 */
+  }
+  
   .book-info {
     flex-direction: column;
     align-items: center;
@@ -173,6 +177,14 @@ button:hover { background: #444; }
     text-align: left;   /* 手機簡介靠左 */
   }
 
+
+  @media (max-width: 768px) {
+  h1 {
+    font-size: 20px;   /* ✅ 手機章節標題大小 */
+    text-align: center;
+    margin: 20px 0;
+  }
+  
   /* 手機版章節內文靠左、不縮排 */
   .content p {
     text-align: left;
