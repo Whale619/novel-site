@@ -1,26 +1,48 @@
 /* 全域設定 */
 body {
-  background-color: #1a1a1a;     /* 黑灰色背景，比純黑柔和 */
-  color: #ddd;                   /* 灰白字，比純白柔和 */
+  background-color: #1a1a1a;     
+  color: #ddd;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   line-height: 1.8;
   max-width: 900px;
   margin: auto;
   padding: 20px;
+  font-size: 18px;   /* 電腦預設=中 */
 }
 
 a {
   color: #90caf9;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
 
 h1, h2 {
-  color: #fff;   /* 標題稍微亮一點，區分正文 */
+  color: #fff;
+  text-align: center;
 }
+
+h1 {
+  font-size: 1.4em;   /* 內文章節標題稍微縮小 */
+  margin: 15px 0;
+}
+
+
+/* 白天模式 */
+body.light {
+  background-color: #fdfdfd;
+  color: #222;
+}
+body.light h1, body.light h2 { color: #000; }
+body.light a { color: #1565c0; }
+body.light a:hover { color: #0d47a1; }
+body.light button {
+  background: #eee;
+  color: #222;
+  border: 1px solid #bbb;
+}
+body.light button:hover { background: #ddd; }
 
 /* 封面與小說資訊 */
 .book-info {
@@ -30,89 +52,98 @@ h1, h2 {
   border-bottom: 1px solid #444;
   padding-bottom: 20px;
 }
-
 .cover img {
   max-width: 200px;
   margin-right: 20px;
+  margin-top: 85px;   /* ✅ 讓圖片往下移 */
   border: 2px solid #444;
 }
 
-.meta {
-  flex: 1;
-  color: #ddd;
-}
-
+.meta { flex: 1; color: inherit; }
+.meta h1 { margin-top: 0; font-size: 1.8em; }
+.meta p { margin: 5px 0; }
+/* 首頁的書名標題靠左 */
 .meta h1 {
-  margin-top: 0;
-  font-size: 1.8em;
-  color: #fff;
+  text-align: left !important;
+  font-size: 1.6em;
+  margin-left: 40px;   /* ✅ 往右移更多 */
 }
 
-.meta p {
-  margin: 5px 0;
-}
 
-/* 章節清單：雙欄排版 */
+
+/* 章節清單 */
 #chapter-list {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;  /* 兩欄 */
+  grid-template-columns: 1fr 1fr; 
   gap: 8px 20px;
 }
-
 #chapter-list li {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-#chapter-list a {
-  color: #90caf9;
-}
-
-#chapter-list a:hover {
-  color: #bbdefb;
-}
+#chapter-list a { color: #90caf9; }
+#chapter-list a:hover { color: #bbdefb; }
+body.light #chapter-list a { color: #1565c0; }
+body.light #chapter-list a:hover { color: #0d47a1; }
 
 /* 章節頁內容 */
 .content p {
   text-indent: 2em;
   margin: 10px 0;
-  color: #ddd;  /* 正文保持灰白 */
+  color: inherit;
 }
 
-/* 導覽區塊（上一章 / 下一章 / 返回目錄） */
+/* 導覽（上一章 / 下一章） */
 .nav {
   text-align: center;
   margin: 20px 0;
 }
-
-.nav a {
-  margin: 0 10px;
-  color: #ffcc80;
+.nav a, .nav span {
+  display: inline-block;
+  background: #333;
+  color: #ddd;
+  border: 1px solid #555;
+  padding: 8px 16px;
+  margin: 5px 10px;
+  border-radius: 5px;
+  font-size: 15px;
 }
-
-.nav a:hover {
-  color: #ffe0b2;
+.nav a:hover { background: #444; }
+body.light .nav a, body.light .nav span {
+  background: #eee;
+  color: #222;
+  border: 1px solid #bbb;
 }
+body.light .nav a:hover { background: #ddd; }
 
-/* 切換順序按鈕 */
+/* 控制列 */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+.controls-left { text-align: left; }
+.controls-right { text-align: right; }
+
+/* 控制列按鈕 */
 button {
   background: #333;
   color: #ddd;
   border: 1px solid #555;
-  padding: 5px 10px;
-  margin: 10px 0;
+  padding: 6px 12px;
+  margin: 5px;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
 }
+button:hover { background: #444; }
 
-button:hover {
-  background: #444;
-}
-
-/* 回到頂部按鈕 */
+/* 回到頂部 */
 #back-to-top {
   display: none;
   position: fixed;
@@ -127,7 +158,10 @@ button:hover {
   font-size: 14px;
   z-index: 1000;
 }
+#back-to-top:hover { background: #555; }
 
-#back-to-top:hover {
-  background: #555;
+/* 響應式：手機 */
+@media (max-width: 768px) {
+  body { font-size: 18px; }
+  #chapter-list { grid-template-columns: 1fr !important; }
 }
