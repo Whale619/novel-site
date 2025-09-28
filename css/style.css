@@ -173,7 +173,7 @@ button:hover { background: #444; }
     margin: 0 auto 15px auto;
   }
   .meta p {
-    font-size: 22px;/* 簡介固定 */
+    font-size: 20px;/* 簡介固定 */
     text-align: left;   /* 手機簡介靠左 */
   }
 
