@@ -193,6 +193,7 @@ button:hover { background: #444; }
     margin: 20px 0;
   }
 
+  /* 章節內文靠左 */
   .content p {
     text-align: left !important;
     text-indent: 0 !important;
@@ -218,5 +219,4 @@ button:hover { background: #444; }
   .nav a {
     white-space: nowrap;
   }
-
 }
