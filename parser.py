@@ -68,7 +68,7 @@ def write_chapters(chapters):
 </head>
 <body>
 
-<!-- ✅ 控制列（手機版固定最上方） -->
+<!-- ✅ 控制列（手機版會顯示在最上方） -->
 <div class="controls">
   <div class="controls-left">
     <a href="../index.html">返回目錄</a>
@@ -84,7 +84,7 @@ def write_chapters(chapters):
 <!-- 章節標題 -->
 <h1>{title}</h1>
 
-<!-- 上一章 / 下一章（章節標題下方） -->
+<!-- 上一章 / 下一章（標題下方） -->
 <div class="nav">
   {prev_link}
   {next_link}
@@ -128,7 +128,7 @@ def write_index(chapters):
 </head>
 <body>
 
-<!-- ✅ 控制列（手機版固定最上方） -->
+<!-- ✅ 控制列（手機版會顯示在最上方） -->
 <div class="controls">
   <div class="controls-left">
     <button onclick="toggleOrder()">切換正序/倒序</button>
