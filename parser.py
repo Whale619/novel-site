@@ -21,10 +21,8 @@ def clean_line(line: str) -> str | None:
     return replace_quotes(line)
 
 def parse_chapter_title(line: str) -> str | None:
-    # 特殊情況：序
     if re.match(r'^\s*序\s*$', line):
         return "序"
-    # 一般章節
     m = re.match(r".*?(?:第)?(\d+)(章|話|回)([^一-龥]*)(.*)", line)
     if m:
         num = m.group(1)
@@ -68,7 +66,7 @@ def write_chapters(chapters):
 </head>
 <body>
 
-<!-- ✅ 控制列（手機版會顯示在最上方） -->
+<!-- ✅ 控制列（手機版最上方） -->
 <div class="controls">
   <div class="controls-left">
     <a href="../index.html">返回目錄</a>
@@ -128,7 +126,7 @@ def write_index(chapters):
 </head>
 <body>
 
-<!-- ✅ 控制列（手機版會顯示在最上方） -->
+<!-- ✅ 控制列（手機版最上方） -->
 <div class="controls">
   <div class="controls-left">
     <button onclick="toggleOrder()">切換正序/倒序</button>
