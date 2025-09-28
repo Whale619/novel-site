@@ -99,8 +99,8 @@ def write_chapters(chapters):
 </body>
 </html>"""
     for idx, (title, content) in enumerate(chapters, start=1):
-        prev_link = f'<a href="{idx-1}.html">⬅ 上一章</a>' if idx > 1 else '<span>⬅ 上一章</span>'
-        next_link = f'<a href="{idx+1}.html">下一章 ➡</a>' if idx < len(chapters) else '<span>下一章 ➡</span>'
+        prev_link = f'<a href="{idx-1}.html">上一章</a>' if idx > 1 else '<span>上一章</span>'
+        next_link = f'<a href="{idx+1}.html">下一章</a>' if idx < len(chapters) else '<span>下一章</span>'
         chapter_html = html_template.format(
             title=title,
             content="<p>" + "</p><p>".join(content.split("\n")) + "</p>",
