@@ -21,18 +21,14 @@ def clean_line(line: str) -> str | None:
     return replace_quotes(line)
 
 def parse_chapter_title(line: str) -> str | None:
-    # 特殊情況：序
     if re.match(r'^\s*序\s*$', line):
         return "序"
-
-    # 一般章節
     m = re.match(r".*?(?:第)?(\d+)(章|話|回)([^一-龥]*)(.*)", line)
     if m:
         num = m.group(1)
         text = m.group(4).strip()
         return f"第{num}章 - {text}" if text else f"第{num}章"
     return None
-
 
 def process_txt(file_path: Path):
     chapters = []
@@ -64,13 +60,13 @@ def write_chapters(chapters):
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
   <title>{title}</title>
   <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-<!-- 頂部的上一章 / 下一章 -->
 <div class="nav">
   {prev_link}
   {next_link}
@@ -93,7 +89,6 @@ def write_chapters(chapters):
 {content}
 </div>
 
-<!-- 底部的上一章 | 下一章 -->
 <div class="nav">
   {prev_link}
   {next_link}
@@ -120,6 +115,7 @@ def write_index(chapters):
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <title>화산귀환 - 劍尊歸來</title>
   <script src="js/main.js" defer></script>

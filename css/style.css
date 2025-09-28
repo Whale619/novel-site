@@ -144,13 +144,26 @@ button:hover { background: #444; }
 }
 #back-to-top:hover { background: #555; }
 
-/* 響應式：手機 */
+/* 🔹 響應式：手機 */
 @media (max-width: 768px) {
-  body { 
-    font-size: 20px;   /* ✅ 手機預設至少 20px */
-    line-height: 2.0;  
+  body { font-size: 36px; line-height: 2.0; }
+  #chapter-list { grid-template-columns: 1fr !important; }
+  #chapter-list li { font-size: 36px; }
+
+  .book-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  #chapter-list { 
-    grid-template-columns: 1fr !important; /* 手機單欄 */
+  .meta h1 {
+    font-size: 36px;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
   }
+  .cover img {
+    max-width: 95%;  /* 放大圖片 */
+    margin: 0 auto 20px auto;
+  }
+  .meta { font-size: 28px; }
 }
