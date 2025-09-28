@@ -1,24 +1,42 @@
-// 切換正序/倒序
+function setFontSize(size) {
+  let root = document.body;
+
+  if (window.innerWidth > 768) {
+    if (size === 'small') root.style.fontSize = "16px";
+    else if (size === 'medium') root.style.fontSize = "18px";
+    else if (size === 'large') root.style.fontSize = "20px";
+  } else {
+    if (size === 'small') root.style.fontSize = "18px";
+    else if (size === 'medium') root.style.fontSize = "20px";
+    else if (size === 'large') root.style.fontSize = "22px";
+  }
+  localStorage.setItem('readerFontSize', size);
+}
+
+function toggleTheme() {
+  let body = document.body;
+  body.classList.toggle("light");
+  let theme = body.classList.contains("light") ? "light" : "dark";
+  localStorage.setItem('readerTheme', theme);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  let savedSize = localStorage.getItem('readerFontSize') || 'medium';
+  setFontSize(savedSize);
+
+  let savedTheme = localStorage.getItem('readerTheme') || 'dark';
+  if (savedTheme === 'light') document.body.classList.add("light");
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function toggleOrder() {
   const list = document.getElementById("chapter-list");
+  if (!list) return;
   const items = Array.from(list.querySelectorAll("li"));
   items.reverse();
   list.innerHTML = "";
   items.forEach(item => list.appendChild(item));
 }
-
-// 回到頂部功能
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// 滾動時顯示/隱藏回到頂部按鈕
-window.addEventListener("scroll", () => {
-  const btn = document.getElementById("back-to-top");
-  if (!btn) return;
-  if (window.scrollY > 200) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-});
