@@ -159,6 +159,7 @@ button:hover { background: #444; }
     font-size: 18px !important;
     padding: 8px 30px;
     white-space: nowrap;   /* 不要換行 */
+    line-height: 1.8;
   }
 
   /* 上一章 / 下一章 小一點 */
