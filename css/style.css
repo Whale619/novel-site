@@ -172,5 +172,11 @@ button:hover { background: #444; }
     font-size: 22px;/* 簡介固定 */
     text-align: left;   /* 手機簡介靠左 */
   }
-}
 
+  /* 手機版章節內文靠左、不縮排 */
+  .content p {
+    text-align: left;
+    text-indent: 0;
+    font-size: 24px;  /* 預設大小*/
+  }
+}
