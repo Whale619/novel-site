@@ -187,10 +187,4 @@ button:hover { background: #444; }
     margin: 20px 0;
   }
 
-  /* 手機章節內文 */
-  .content p {
-    text-align: left;
-    text-indent: 0;
-    font-size: 18px;
-  }
 }
