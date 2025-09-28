@@ -156,14 +156,23 @@ button:hover { background: #444; }
 
   /* 返回目錄固定大小 */
   .controls-left a {
+<<<<<<< Updated upstream
     font-size: 18px !important;   /* 固定字體大小 */
     padding: 8px 20px;            /* 固定按鈕大小 */
+=======
+    font-size: 22px !important;   /* 固定字體大小 */
+    padding: 10px 16px;            /* 固定按鈕大小 */
+>>>>>>> Stashed changes
   }
 
   /* 上一章 / 下一章 小一點 */
   .nav a, .nav span {
     font-size: 18px !important;   /* 比返回目錄小 */
+<<<<<<< Updated upstream
     padding: 6px 10px;            /* 小一點的按鈕 */
+=======
+    padding: 6px 12px;            /* 小一點的按鈕 */
+>>>>>>> Stashed changes
   }
 
   .book-info {
@@ -193,11 +202,15 @@ button:hover { background: #444; }
     margin: 20px 0;
   }
 
+<<<<<<< Updated upstream
   /* 章節內文靠左 */
+=======
+>>>>>>> Stashed changes
   .content p {
     text-align: left !important;
     text-indent: 0 !important;
     line-height: 1.8;
+<<<<<<< Updated upstream
   }
 
   /* 上下章按鈕放在標題上方，置中顯示 */
@@ -218,5 +231,8 @@ button:hover { background: #444; }
   /* 返回目錄不要換行 */
   .nav a {
     white-space: nowrap;
+=======
+>>>>>>> Stashed changes
   }
+
 }
