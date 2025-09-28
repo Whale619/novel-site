@@ -1,31 +1,33 @@
-/* 全域設定 */
+/* ================= 全域設定 ================= */
 body {
-  background-color: #1a1a1a;     
-  color: #ddd;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  line-height: 1.8;
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  font-size: 18px;   /* 電腦預設=中 */
+  background-color: #1a1a1a;     /* 預設背景：深色模式 */
+  color: #ddd;                   /* 預設文字顏色：淺灰 */
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;  /* 字型 */
+  line-height: 1.8;              /* 行距 */
+  max-width: 900px;              /* 內文最大寬度 */
+  margin: auto;                  /* 自動置中 */
+  padding: 20px;                 /* 內距 */
+  font-size: 18px;               /* 電腦版預設字體大小 */
 }
 
+/* 超連結樣式 */
 a {
-  color: #90caf9;
-  text-decoration: none;
+  color: #90caf9;                /* 連結顏色 */
+  text-decoration: none;         /* 預設不加底線 */
 }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline; }  /* 滑過時加底線 */
 
+/* 標題樣式 */
 h1, h2 {
-  color: #fff;
-  text-align: center;
+  color: #fff;                   /* 標題文字：白色 */
+  text-align: center;            /* 標題置中 */
 }
 h1 {
   font-size: 1.4em;   
   margin: 15px 0;
 }
 
-/* 白天模式 */
+/* ================= 白天模式 ================= */
 body.light { background-color: #fdfdfd; color: #222; }
 body.light h1, body.light h2 { color: #000; }
 body.light a { color: #1565c0; }
@@ -33,22 +35,23 @@ body.light a:hover { color: #0d47a1; }
 body.light button { background: #eee; color: #222; border: 1px solid #bbb; }
 body.light button:hover { background: #ddd; }
 
-/* 封面與小說資訊 */
+/* ================= 封面與小說資訊 ================= */
 .book-info {
-  display: flex;
+  display: flex;                 /* 封面與資訊水平排列 */
   align-items: flex-start;
   margin-bottom: 30px;
   border-bottom: 1px solid #444;
   padding-bottom: 20px;
 }
 .cover img {
-  max-width: 200px;
+  max-width: 200px;              /* 封面最大寬度 */
   margin-right: 20px;
-  margin-top: 85px;   /* ✅ 圖片往下移 */
-  border: 2px solid #444;
+  margin-top: 85px;              /* 封面下移 */
+  border: 2px solid #444;        /* 封面邊框 */
 }
 .meta { flex: 1; color: inherit; }
 .meta h1 { margin-top: 0; font-size: 1.8em; }
+
 /* 首頁的書名標題靠左 */
 .meta h1 {
   text-align: left !important;
@@ -57,33 +60,33 @@ body.light button:hover { background: #ddd; }
 }
 .meta p { margin: 5px 0; }
 
-/* 章節清單 */
+/* ================= 章節清單 ================= */
 #chapter-list {
-  list-style: none;
+  list-style: none;              /* 移除項目符號 */
   padding: 0;
-  display: grid;
+  display: grid;                 /* 使用網格顯示章節 */
   grid-template-columns: 1fr 1fr; 
-  gap: 8px 20px;
+  gap: 8px 20px;                 /* 行距與間距 */
 }
 #chapter-list li {
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap;           /* 不換行 */
+  overflow: hidden;              /* 超出隱藏 */
+  text-overflow: ellipsis;       /* 超出以...顯示 */
 }
 #chapter-list a { color: #90caf9; }
 #chapter-list a:hover { color: #bbdefb; }
 body.light #chapter-list a { color: #1565c0; }
 body.light #chapter-list a:hover { color: #0d47a1; }
 
-/* 章節頁內容 */
+/* ================= 章節頁內容 ================= */
 .content p {
-  text-indent: 2em;
+  text-indent: 2em;              /* 每段縮排 */
   margin: 10px 0;
   color: inherit;
 }
 
-/* 導覽（上一章 / 下一章） */
+/* ================= 導覽（上一章 / 下一章） ================= */
 .nav {
   text-align: center;
   margin: 20px 0;
@@ -104,7 +107,7 @@ body.light .nav a, body.light .nav span {
 }
 body.light .nav a:hover { background: #ddd; }
 
-/* 控制列 */
+/* ================= 控制列（返回 / 字體調整 / 主題切換） ================= */
 .controls {
   display: flex;
   justify-content: space-between;
@@ -127,9 +130,9 @@ button {
 }
 button:hover { background: #444; }
 
-/* 回到頂部 */
+/* ================= 回到頂部 ================= */
 #back-to-top {
-  display: none;
+  display: none;                 /* 預設隱藏 */
   position: fixed;
   bottom: 30px;
   right: 20px;
@@ -144,53 +147,60 @@ button:hover { background: #444; }
 }
 #back-to-top:hover { background: #555; }
 
+
+
 /* 🔹 響應式：手機 */
 @media (max-width: 768px) {
-  body { font-size: 28px; line-height: 1.8; }
+  body { font-size: 20px !important; line-height: 1.8; }  /* 全文文字大小 20px */
 
   /* 小說目錄標題 */
-  h2 { font-size: 24px; }
+  h2 { font-size: 22px; }  /* 標題比正文稍大 */
 
+  /* 章節清單固定一欄 */
   #chapter-list { grid-template-columns: 1fr !important; }
-  #chapter-list li { font-size: 18px; }
+  #chapter-list li { font-size: 20px !important; }
 
   /* 返回目錄固定大小 */
   .controls-left a {
-    font-size: 18px !important;
+    font-size: 20px !important;
     padding: 8px 30px;
     white-space: nowrap;   /* 不要換行 */
-    line-height: 1.8;
   }
 
-  /* 上一章 / 下一章 小一點 */
+  /* 上一章 / 下一章 */
   .nav a, .nav span {
-    font-size: 18px !important;
-    padding: 6px 10px;
+    font-size: 20px !important;
+    padding: 6px 12px;
   }
 
+  /* 封面與小說資訊：圖片在上，簡介在下 */
   .book-info {
-    flex-direction: column;
+    flex-direction: column;       /* 改成垂直排列 */
     align-items: center;
     text-align: center;
   }
-  .meta h1 {
-    font-size: 26px;
-    text-align: left;
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
   .cover img {
-    max-width: 90%;
-    margin: 0 auto 15px auto;
+    max-width: 90%;              /* 圖片最大寬度 */
+    margin: 0 auto 15px auto;    /* 置中，下方留空 */
+  }
+  .meta {
+    text-align: left;            /* 內容靠左 */
+    width: 100%;
+    padding: 0 15px;
+  }
+  .meta h1 {
+    font-size: 24px;             /* 書名標題 */
+    text-align: center;          /* 書名置中 */
+    margin: 15px 0;
   }
   .meta p {
-    font-size: 20px;
-    text-align: left;
+    font-size: 20px !important;  /* 作者、簡介文字統一20px */
+    margin: 8px 0;
   }
 
   /* 手機章節標題 */
   h1 {
-    font-size: 20px;
+    font-size: 22px;             /* 章節標題 */
     text-align: center;
     margin: 20px 0;
   }
@@ -200,5 +210,7 @@ button:hover { background: #444; }
     text-align: left !important;
     text-indent: 0 !important;
     line-height: 1.8;
+    font-size: 20px !important;  /* 內文文字統一 20px */
   }
 }
+
