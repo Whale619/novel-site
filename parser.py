@@ -21,8 +21,10 @@ def clean_line(line: str) -> str | None:
     return replace_quotes(line)
 
 def parse_chapter_title(line: str) -> str | None:
+    # 特殊情況：序
     if re.match(r'^\s*序\s*$', line):
         return "序"
+    # 一般章節
     m = re.match(r".*?(?:第)?(\d+)(章|話|回)([^一-龥]*)(.*)", line)
     if m:
         num = m.group(1)
@@ -66,7 +68,7 @@ def write_chapters(chapters):
 </head>
 <body>
 
-<!-- ✅ 手機版最上方：返回目錄 / 字體調整 / 切換主題 -->
+<!-- ✅ 控制列（手機版固定最上方） -->
 <div class="controls">
   <div class="controls-left">
     <a href="../index.html">返回目錄</a>
@@ -79,9 +81,10 @@ def write_chapters(chapters):
   </div>
 </div>
 
+<!-- 章節標題 -->
 <h1>{title}</h1>
 
-<!-- ✅ 標題下方：上一章 / 下一章 -->
+<!-- 上一章 / 下一章（章節標題下方） -->
 <div class="nav">
   {prev_link}
   {next_link}
@@ -125,6 +128,19 @@ def write_index(chapters):
 </head>
 <body>
 
+<!-- ✅ 控制列（手機版固定最上方） -->
+<div class="controls">
+  <div class="controls-left">
+    <button onclick="toggleOrder()">切換正序/倒序</button>
+  </div>
+  <div class="controls-right">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('medium')">中</button>
+    <button onclick="setFontSize('large')">大</button>
+    <button onclick="toggleTheme()">切換主題</button>
+  </div>
+</div>
+
 <div class="book-info">
   <div class="cover">
     <img src="img/cover.jpg" alt="封面">
@@ -145,14 +161,6 @@ def write_index(chapters):
 </div>
 
 <h2>小說目錄</h2>
-<div class="controls">
-  <div class="controls-left">
-    <button onclick="toggleOrder()">切換正序/倒序</button>
-  </div>
-  <div class="controls-right">
-    <button onclick="toggleTheme()">切換主題</button>
-  </div>
-</div>
 <ul id="chapter-list">
 """
     for idx, (title, _) in enumerate(chapters, start=1):
@@ -164,7 +172,6 @@ def write_index(chapters):
 </html>"""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write(html)
-
 
 def main():
     def extract_number(path: Path):
