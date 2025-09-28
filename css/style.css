@@ -146,9 +146,10 @@ button:hover { background: #444; }
 
 /* 🔹 響應式：手機 */
 @media (max-width: 768px) {
-  body { font-size: 36px; line-height: 2.0; }
+  body { font-size: 28px; line-height: 1.8; }
+
   #chapter-list { grid-template-columns: 1fr !important; }
-  #chapter-list li { font-size: 36px; }
+  #chapter-list li { font-size: 24px; }  /* ✅ 章節目錄字體小一點 */
 
   .book-info {
     flex-direction: column;
@@ -156,14 +157,16 @@ button:hover { background: #444; }
     text-align: center;
   }
   .meta h1 {
-    font-size: 36px;
+    font-size: 28px;   /* ✅ 書名標題小一點 */
     text-align: left;
     margin-left: 10px;
     margin-bottom: 10px;
   }
   .cover img {
-    max-width: 95%;  /* 放大圖片 */
-    margin: 0 auto 20px auto;
+    max-width: 90%;  
+    margin: 0 auto 15px auto;
   }
-  .meta { font-size: 28px; }
+  .meta p {
+    font-size: 24px;  /* ✅ 簡介文字小一點 */
+  }
 }
