@@ -14,33 +14,23 @@ a {
   color: #90caf9;
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
+a:hover { text-decoration: underline; }
 
 h1, h2 {
   color: #fff;
   text-align: center;
 }
-
 h1 {
-  font-size: 1.4em;   /* 內文章節標題稍微縮小 */
+  font-size: 1.4em;   
   margin: 15px 0;
 }
 
 /* 白天模式 */
-body.light {
-  background-color: #fdfdfd;
-  color: #222;
-}
+body.light { background-color: #fdfdfd; color: #222; }
 body.light h1, body.light h2 { color: #000; }
 body.light a { color: #1565c0; }
 body.light a:hover { color: #0d47a1; }
-body.light button {
-  background: #eee;
-  color: #222;
-  border: 1px solid #bbb;
-}
+body.light button { background: #eee; color: #222; border: 1px solid #bbb; }
 body.light button:hover { background: #ddd; }
 
 /* 封面與小說資訊 */
@@ -54,19 +44,17 @@ body.light button:hover { background: #ddd; }
 .cover img {
   max-width: 200px;
   margin-right: 20px;
-  margin-top: 85px;   /* ✅ 讓圖片往下移 */
+  margin-top: 85px;   /* ✅ 圖片往下移 */
   border: 2px solid #444;
 }
-
 .meta { flex: 1; color: inherit; }
 .meta h1 { margin-top: 0; font-size: 1.8em; }
-/* 首頁的書名標題靠左 */
+.meta p { margin: 5px 0; }
 .meta h1 {
   text-align: left !important;
   font-size: 1.6em;
-  margin-left: 40px;   /* ✅ 往右移 */
+  margin-left: 40px;   
 }
-.meta p { margin: 5px 0; }
 
 /* 章節清單 */
 #chapter-list {
@@ -111,9 +99,7 @@ body.light #chapter-list a:hover { color: #0d47a1; }
 }
 .nav a:hover { background: #444; }
 body.light .nav a, body.light .nav span {
-  background: #eee;
-  color: #222;
-  border: 1px solid #bbb;
+  background: #eee; color: #222; border: 1px solid #bbb;
 }
 body.light .nav a:hover { background: #ddd; }
 
@@ -159,6 +145,6 @@ button:hover { background: #444; }
 
 /* 響應式：手機 */
 @media (max-width: 768px) {
-  body { font-size: 18px; }   /* 預設小=小說狂人中 */
-  #chapter-list { grid-template-columns: 1fr !important; } /* 手機單欄 */
+  body { font-size: 18px; }   /* 手機預設用小字 */
+  #chapter-list { grid-template-columns: 1fr !important; } /* 單欄 */
 }

@@ -8,9 +8,9 @@ function setFontSize(size) {
     else if (size === 'large') root.style.fontSize = "20px";
   } else {
     // 手機版
-    if (size === 'small') root.style.fontSize = "18px";  // 小 = 小說狂人的「中」
-    else if (size === 'medium') root.style.fontSize = "20px"; // 中 = 小說狂人的「大」
-    else if (size === 'large') root.style.fontSize = "22px";  // 大 = 小說狂人的「特大」
+    if (size === 'small') root.style.fontSize = "18px";   // 小 = 小說狂人「中」
+    else if (size === 'medium') root.style.fontSize = "20px"; // 中 = 小說狂人「大」
+    else if (size === 'large') root.style.fontSize = "22px";  // 大 = 小說狂人「特大」
   }
   localStorage.setItem('readerFontSize', size);
 }
@@ -23,7 +23,13 @@ function toggleTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let savedSize = localStorage.getItem('readerFontSize') || 'medium';
+  // ✅ 自動偵測裝置
+  let isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  let savedSize = localStorage.getItem('readerFontSize');
+  if (!savedSize) {
+    savedSize = isMobile ? 'small' : 'medium';  // 手機預設小，電腦預設中
+  }
   setFontSize(savedSize);
 
   let savedTheme = localStorage.getItem('readerTheme') || 'dark';
