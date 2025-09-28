@@ -2,13 +2,15 @@ function setFontSize(size) {
   let root = document.body;
 
   if (window.innerWidth > 768) {
+    // 電腦版
     if (size === 'small') root.style.fontSize = "16px";
     else if (size === 'medium') root.style.fontSize = "18px";
     else if (size === 'large') root.style.fontSize = "20px";
   } else {
-    if (size === 'small') root.style.fontSize = "18px";
-    else if (size === 'medium') root.style.fontSize = "20px";
-    else if (size === 'large') root.style.fontSize = "22px";
+    // 手機版
+    if (size === 'small') root.style.fontSize = "18px";  // 小 = 小說狂人的「中」
+    else if (size === 'medium') root.style.fontSize = "20px"; // 中 = 小說狂人的「大」
+    else if (size === 'large') root.style.fontSize = "22px";  // 大 = 小說狂人的「特大」
   }
   localStorage.setItem('readerFontSize', size);
 }
