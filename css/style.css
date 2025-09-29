@@ -177,21 +177,20 @@ button:hover { background: #444; }
     display: flex !important;
     justify-content: space-between !important; /* 左右對齊 */
     align-items: center !important;
-    flex-wrap: nowrap !important; /* 不換行 */
   }
 
-  /* "返回目錄"固定大小 */
+  /* 返回目錄靠左，縮小多餘間距 */
   .controls-left a {
     font-size: 20px !important;
-    padding: 8px 30px;
-    white-space: nowrap;   /* 不要換行 */
-    margin: 0; /* 去掉多餘間距 */
+    padding: 6px 10px;
+    white-space: nowrap;
+    margin: 0;  /* 清掉多餘的間距 */
   }
 
   /* 上一章 / 下一章 */
   .nav a, .nav span {
-    font-size: 18px !important;
-    padding: 4px 10px;
+    font-size: 16px !important;   /* 調小字體 */
+    padding: 4px 8px !important;  /* 減少內距，按鈕變小 */
   }
 
   .cover img {
