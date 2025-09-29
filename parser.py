@@ -24,8 +24,12 @@ def clean_line(line: str) -> str | None:
     if "@雨" in line: return None
     if re.fullmatch(r"[A-Za-z0-9]+", line): return None  # 跳過純英數字
 
-    # 特殊字替換（清明 → 青明）
+    # 特殊字替換
     line = line.replace("清明", "青明")
+    line = line.replace("清字", "青字")
+    line = line.replace("素素", "小小")
+    line = line.replace("!", "！")
+    line = line.replace("?", "？")
 
     return replace_quotes(line)      # 最後替換引號
 
