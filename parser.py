@@ -180,8 +180,6 @@ def write_index(chapters):
   </div>
 </div>
 
-<p>1</p>   <!-- 🔹 測試文字 -->
-
 <!-- 控制列 -->
 <div class="controls">
   <div class="controls-left">
