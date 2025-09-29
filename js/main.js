@@ -1,3 +1,5 @@
+// main.js
+
 // ================= 字體大小切換 =================
 function setFontSize(size) {
   let root = document.body;
