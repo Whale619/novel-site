@@ -77,7 +77,7 @@ def write_chapters(chapters):
 </head>
 <body>
 
-<!-- ✅ 控制列 -->
+<!-- 控制列 (內頁)-->
 <div class="controls">
   <div class="controls-left">
     <a href="../index.html">返回目錄</a>
@@ -136,15 +136,12 @@ def write_index(chapters):
 </head>
 <body>
 
-<!-- ✅ 控制列 -->
+<!-- 控制列 -->
 <div class="controls">
   <div class="controls-left">
     <button onclick="toggleOrder()">切換正序/倒序</button>
   </div>
   <div class="controls-right">
-    <button onclick="setFontSize('small')">小</button>
-    <button onclick="setFontSize('medium')">中</button>
-    <button onclick="setFontSize('large')">大</button>
     <button onclick="toggleTheme()">切換主題</button>
   </div>
 </div>

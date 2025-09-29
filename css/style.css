@@ -63,9 +63,10 @@ body.light button:hover { background: #ddd; }
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;   /* 🔹 永遠一欄 */
-  gap: 8px 0;                   /* 垂直間距 */
+  grid-template-columns: 1fr 1fr;  /* 桌機版：兩欄 */
+  gap: 8px 20px;
 }
+
 #chapter-list li {
   margin: 0;
   white-space: nowrap;
@@ -151,30 +152,47 @@ button:hover { background: #444; }
   body { font-size: 20px !important; line-height: 1.8; }
 
   /* 小說目錄標題 */
-  h2 { font-size: 22px; }
+  h2 { font-size: 22px; } /* 標題比正文稍大 */
+
+  /* 章節清單固定一欄 */
+  #chapter-list { grid-template-columns: 1fr !important; }
+  #chapter-list li { font-size: 20px !important; }
 
   /* 封面與資訊改成上下排列 */
   .book-info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* 原本左右並排 → 改為上下排列 */
+    align-items: center;/* 原本左右並排 → 改為上下排列 */
+    text-align: left;
+  }
+
+  /* "返回目錄"固定大小 */
+  .controls-left a {
+    font-size: 20px !important;
+    padding: 8px 30px;
+    white-space: nowrap;   /* 不要換行 */
+  }
+
+  /* 上一章 / 下一章 */
+  .nav a, .nav span {
+    font-size: 20px !important;
+    padding: 6px 12px;
   }
   .cover img {
     max-width: 90%;
     margin: 0 auto 15px auto;
   }
   .meta {
-    text-align: left;
+    text-align: left; /* 內容靠左 */
     width: 100%;
     padding: 0 15px;
   }
   .meta h1 {
-    font-size: 24px;
+    font-size: 24px;   /* 書名標題 */
     text-align: center;
     margin: 15px 0;
   }
   .meta p {
-    font-size: 20px !important;
+    font-size: 20px !important;  /* 作者、簡介文字統一20px */
     margin: 8px 0;
   }
 
@@ -191,5 +209,6 @@ button:hover { background: #444; }
     text-indent: 0 !important;
     line-height: 1.8;
     font-size: 20px !important;
-  }
+    }
+  
 }
