@@ -149,34 +149,31 @@ button:hover { background: #444; }
 }
 #back-to-top:hover { background: #555; }
 
-/* ================= 響應式（桌機模式） ================= */
-/* 桌機版：顯示按鈕，隱藏下拉選單 */
-@media (min-width: 769px) {
-  #fontSizeSelector {
-    display: none !important;
-  }
-}
-
 /* ================= 響應式（手機模式） ================= */
 @media (max-width: 768px) {
-  body { font-size: 20px !important; line-height: 1.8; }
+  
+  body { 
+    font-size: 20px !important;  /* ⚠️ 寫死整體字體大小（會蓋掉 JS 控制，若只想內文隨 JS，這行可移除） */
+    line-height: 1.8;            /* 行距設定 */
+  }
 
-  /* 手機板隱藏原本三顆字體按鈕 */
+  /* 手機板隱藏原本三顆字體按鈕（小/中/大） */
   .controls-right button.font-btn {
     display: none !important;
   }
 
   /* 手機板字體下拉選單樣式 */
   #fontSizeSelector {
-    font-size: 18px;
-    padding: 6px 8px;
-    margin-right: 8px; /* 與切換主題保持距離 */
-    border-radius: 5px;
-    background: #333;
-    color: #ddd;
-    border: 1px solid #555;
+    font-size: 18px;            /* 選單文字大小 */
+    padding: 6px 8px;           /* 內距 */
+    margin-right: 8px;          /* 與「切換主題」保持距離 */
+    border-radius: 5px;         /* 圓角 */
+    background: #333;           /* 背景色 */
+    color: #ddd;                /* 文字顏色 */
+    border: 1px solid #555;     /* 邊框 */
   }
 
+  /* 白天模式下的下拉選單樣式 */
   body.light #fontSizeSelector {
     background: #eee;
     color: #222;
@@ -184,25 +181,31 @@ button:hover { background: #444; }
   }
 
   /* 小說目錄標題 */
-  h2 { font-size: 22px; } /* 標題比正文稍大 */
+  h2 { 
+    font-size: 22px;            /* 標題比正文稍大 */
+  }
 
   /* 章節清單固定一欄 */
-  #chapter-list { grid-template-columns: 1fr !important; }
-  #chapter-list li { font-size: 18px; }
+  #chapter-list { 
+    grid-template-columns: 1fr !important; 
+  }
+  #chapter-list li { 
+    font-size: 18px; 
+  }
 
-  /* 封面與資訊改成上下排列 */
+  /* 封面與小說資訊改成上下排列 */
   .book-info {
-    display: block !important;    /* 仍然用 flex */
-    flex-direction: column !important; /* 強制改為上下排列 */
-    align-items: center !important;    /* 水平置中 */
-    text-align: center !important;     /* 文字置中 */
+    display: block !important;       /* 不再橫向排列，改為直式 */
+    flex-direction: column !important; /* 即便仍保留 flex，也強制改成上下排列 */
+    align-items: center !important;  /* 水平置中 */
+    text-align: center !important;   /* 文字置中 */
   }
 
   .cover {
-    margin: 0 !important;   /* 清掉桌機版的 margin-right */
+    margin: 0 !important;            /* 清掉桌機版的 margin-right */
   }
 
-   /* 內文控制列改成一行左右分佈 */
+  /* 內文控制列改成一行左右分佈 */
   .controls {
     display: flex !important;
     justify-content: space-between !important; /* 左右對齊 */
@@ -214,36 +217,37 @@ button:hover { background: #444; }
     font-size: 20px !important;
     padding: 6px 10px;
     white-space: nowrap;
-    margin: 0;  /* 清掉多餘的間距 */
+    margin: 0;                       /* 清掉多餘的間距 */
   }
 
-  /* 上一章 / 下一章 */
+  /* 上一章 / 下一章按鈕縮小 */
   .nav a, .nav span {
-    font-size: 16px !important;   /* 調小字體 */
-    padding: 4px 8px !important;  /* 減少內距，按鈕變小 */
+    font-size: 16px !important;      /* 按鈕文字縮小 */
+    padding: 4px 8px !important;     /* 內距縮小，按鈕變小 */
   }
 
   .cover img {
     max-width: 90% !important;
     margin: 0 auto 15px auto !important;
-    display: block !important;      /* 獨佔一行 */
+    display: block !important;       /* 獨佔一行顯示 */
   }
 
   .meta {
-    margin: 0 !important;           /* 清掉桌機版 margin-left:40px */
+    margin: 0 !important;            /* 清掉桌機版 margin-left:40px */
     padding: 0 15px !important;
     width: 100% !important;
-    text-align: left !important;    /* 作者資訊靠左（要置中就改 center） */
+    text-align: left !important;     /* 作者資訊靠左（如果要置中改成 center） */
     display: block !important;
   }
   
   .meta h1 {
-    font-size: 24px !important; /* 書名標題 */
+    font-size: 24px !important;      /* 書名標題 */
     text-align: center !important;
     margin: 15px 0 !important;
   }
+
   .meta p {
-    font-size: 20px !important;  /* 作者、簡介文字統一20px */
+    font-size: 20px !important;      /* 作者、簡介文字固定 20px */
     margin: 8px 0;
   }
 
@@ -254,12 +258,11 @@ button:hover { background: #444; }
     margin: 20px 0;
   }
 
-  /* 章節內文靠左 */
+  /* 章節內文 */
   .content p {
-    font-size: 1em;              /* 跟隨 body 的字體大小 */
-    text-align: left !important;
-    text-indent: 0 !important;
-    line-height: 1.8;
-    }
-  
+    text-align: left !important;     /* 內文靠左 */
+    text-indent: 0 !important;       /* 不縮排 */
+    line-height: 1.8;                /* 行距 */
+    /* ⚠️ 沒有字體大小設定，內文字體大小交給 JS 控制 (body.fontSize) */
+  }
 }
