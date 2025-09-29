@@ -131,11 +131,13 @@ def write_index(chapters):
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <title>화산귀환 - 劍尊歸來</title>
   <script src="js/main.js" defer></script>
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
 
 <!-- 控制列 -->
@@ -167,7 +169,7 @@ def write_index(chapters):
   </div>
 </div>
 
-<p>4</p>   <!-- 🔹 這裡新增一行文字 "1" -->
+<p>5</p>   <!-- 🔹 這裡新增一行文字 "1" -->
 
 <h2>小說目錄</h2>
 <ul id="chapter-list">
