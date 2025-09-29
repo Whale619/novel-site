@@ -165,6 +165,8 @@ def write_index(chapters):
   </div>
 </div>
 
+<p>1</p>   <!-- 🔹 這裡新增一行文字 "1" -->
+
 <h2>小說目錄</h2>
 <ul id="chapter-list">
 """
