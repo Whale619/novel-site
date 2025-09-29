@@ -162,7 +162,7 @@ button:hover { background: #444; }
 
   /* 封面與資訊改成上下排列 */
   .book-info {
-    display: flex !important;      /* 仍然用 flex */
+    display: block !important;    /* 仍然用 flex */
     flex-direction: column !important; /* 強制改為上下排列 */
     align-items: center !important;    /* 水平置中 */
     text-align: center !important;     /* 文字置中 */
@@ -186,22 +186,23 @@ button:hover { background: #444; }
   }
 
   .cover img {
-    max-width: 90%;
-    margin: 0 auto 15px auto !important;  /* 圖片置中，取消右邊距 */
-    display: block;
+    max-width: 90% !important;
+    margin: 0 auto 15px auto !important;
+    display: block !important;      /* 獨佔一行 */
   }
-  
+
   .meta {
-    width: 100%;
-    padding: 0 15px;
-    margin: 0 !important;               /* 清掉桌機版 margin-left */
-    text-align: left;                   /* 如果想置中可以改成 center */
+    margin: 0 !important;           /* 清掉桌機版 margin-left:40px */
+    padding: 0 15px !important;
+    width: 100% !important;
+    text-align: left !important;    /* 作者資訊靠左（要置中就改 center） */
+    display: block !important;
   }
   
   .meta h1 {
-    font-size: 24px;   /* 書名標題 */
-    text-align: center;
-    margin: 15px 0;
+    font-size: 24px !important; /* 書名標題 */
+    text-align: center !important;
+    margin: 15px 0 !important;
   }
   .meta p {
     font-size: 20px !important;  /* 作者、簡介文字統一20px */
