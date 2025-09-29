@@ -4,11 +4,11 @@
 function setFontSize(size) {
   let root = document.body;
 
-  if (window.innerWidth > 768 && !root.classList.contains("mobile")) {
+  if (window.innerWidth > 768 && !root.classList.contains("medium")) {
     // 桌面版字體設定
-    if (size === 'small') root.style.fontSize = "16px";
-    else if (size === 'medium') root.style.fontSize = "18px";
-    else if (size === 'large') root.style.fontSize = "20px";
+    if (size === 'small') root.style.fontSize = "18px";
+    else if (size === 'medium') root.style.fontSize = "20px";
+    else if (size === 'large') root.style.fontSize = "22px";
   } else {
     // 手機版字體（較大）
     if (size === 'small') root.style.fontSize = "18px";

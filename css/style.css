@@ -9,7 +9,6 @@ body {
   max-width: 900px;              /* 內文最大寬度 */
   margin: auto;                  /* 置中顯示 */
   padding: 20px;
-  font-size: 20px;               /* 🔹 全文文字固定20px */
 }
 
 /* 超連結樣式 */
@@ -84,7 +83,6 @@ body.light #chapter-list a:hover { color: #0d47a1; }
   text-indent: 2em;              /* 首行縮排 */
   margin: 10px 0;
   color: inherit;
-  font-size: 20px;               /* 🔹 內文固定20px */
 }
 
 /* ================= 導覽（上一章 / 下一章） ================= */
@@ -100,7 +98,6 @@ body.light #chapter-list a:hover { color: #0d47a1; }
   padding: 8px 16px;
   margin: 5px 10px;
   border-radius: 5px;
-  font-size: 20px;               /* 🔹 導覽按鈕文字固定20px */
 }
 .nav a:hover { background: #444; }
 body.light .nav a, body.light .nav span {
@@ -150,7 +147,7 @@ button:hover { background: #444; }
 
 /* ================= 響應式（手機模式） ================= */
 @media (max-width: 768px) {
-  body { font-size: 20px !important; line-height: 1.8; }
+  body { line-height: 1.8; }
 
   /* 小說目錄標題 */
   h2 { font-size: 22px; } /* 標題比正文稍大 */
