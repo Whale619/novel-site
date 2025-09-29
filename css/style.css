@@ -156,7 +156,7 @@ button:hover { background: #444; }
 
   /* 章節清單固定一欄 */
   #chapter-list { grid-template-columns: 1fr !important; }
-  #chapter-list li { font-size: 20px !important; }
+  #chapter-list li { font-size: 18px; }
 
   /* 封面與資訊改成上下排列 */
   .book-info {
