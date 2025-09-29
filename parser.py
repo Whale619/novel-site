@@ -190,8 +190,6 @@ def write_index(chapters):
   </div>
 </div>
 
-<h2>1</h2>
-
 <h2>小說目錄</h2>
 <ul id="chapter-list">
 """
