@@ -18,6 +18,12 @@ function setFontSize(size) {
   localStorage.setItem('readerFontSize', size); // 記錄到本地
 }
 
+// ================= 手機板用：下拉選單字體切換 =================
+function changeFontSize(size) {
+  setFontSize(size);
+  localStorage.setItem('readerFontSize', size); // 記錄選擇
+}
+
 // ================= 主題切換 =================
 function toggleTheme() {
   let body = document.body;
@@ -38,6 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let savedSize = localStorage.getItem('readerFontSize');
   if (!savedSize) savedSize = 'medium';
   setFontSize(savedSize);
+
+  // 同步下拉選單狀態（手機版）
+  let fontSelector = document.getElementById("fontSizeSelector");
+  if (fontSelector) fontSelector.value = savedSize;
 
   // 載入主題設定
   let savedTheme = localStorage.getItem('readerTheme') || 'dark';
