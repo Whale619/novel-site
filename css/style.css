@@ -192,7 +192,7 @@ button:hover { background: #444; }
     text-align: left;  /* 作者資訊靠左顯示（如果想要也置中可改成 center） */
     margin: 0;         /* 🔹 移除桌機版的 margin */
   }
-  
+
    .meta h1 {
     font-size: 24px;
     text-align: center;
@@ -215,6 +215,5 @@ button:hover { background: #444; }
     text-align: left !important;
     text-indent: 0 !important;   /* 移除縮排 */
     line-height: 1.8;
-    font-size: 20px !important;
   }
 }
