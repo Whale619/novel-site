@@ -160,8 +160,7 @@ button:hover { background: #444; }
 
   /* 封面與資訊改成上下排列 */
   .book-info {
-    flex-direction: column; /* 原本左右並排 → 改為上下排列 */
-    align-items: center;/* 原本左右並排 → 改為上下排列 */
+    display: block !important;     /* 強制改成 block 排列（避免沿用 flex 並排）*/
     text-align: left;
   }
 
@@ -180,6 +179,7 @@ button:hover { background: #444; }
   .cover img {
     max-width: 90%;
     margin: 0 auto 15px auto;
+    display: block; /* 圖片獨佔一行 */
   }
   .meta {
     text-align: left; /* 內容靠左 */
