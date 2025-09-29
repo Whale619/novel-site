@@ -153,6 +153,28 @@ button:hover { background: #444; }
 @media (max-width: 768px) {
   body { font-size: 20px !important; line-height: 1.8; }
 
+  /* 手機板隱藏原本三顆字體按鈕 */
+  .controls-right button.font-btn {
+    display: none !important;
+  }
+
+  /* 手機板字體下拉選單樣式 */
+  #fontSizeSelector {
+    font-size: 18px;
+    padding: 6px 8px;
+    margin-right: 8px; /* 與切換主題保持距離 */
+    border-radius: 5px;
+    background: #333;
+    color: #ddd;
+    border: 1px solid #555;
+  }
+
+  body.light #fontSizeSelector {
+    background: #eee;
+    color: #222;
+    border: 1px solid #bbb;
+  }
+
   /* 小說目錄標題 */
   h2 { font-size: 22px; } /* 標題比正文稍大 */
 
@@ -229,7 +251,6 @@ button:hover { background: #444; }
     text-align: left !important;
     text-indent: 0 !important;
     line-height: 1.8;
-    font-size: 20px !important;
     }
   
 }
