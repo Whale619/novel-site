@@ -86,19 +86,19 @@ def write_chapters(chapters):
     <a href="../index.html">返回目錄</a>
   </div>
   <div class="controls-right">
-    <button class="font-btn" onclick="setFontSize('small')">小</button>
-    <button class="font-btn" onclick="setFontSize('medium')">中</button>
-    <button class="font-btn" onclick="setFontSize('large')">大</button>
+  <!-- 桌機版：三顆按鈕 -->
+  <button class="font-btn" onclick="setFontSize('small')">小</button>
+  <button class="font-btn" onclick="setFontSize('medium')">中</button>
+  <button class="font-btn" onclick="setFontSize('large')">大</button>
 
-    <!-- 手機板下拉選單 -->
-    <select id="fontSizeSelector" onchange="changeFontSize(this.value)">
-        <option value="small">小</option>
-        <option value="medium" selected>中</option>
-        <option value="large">大</option>
-    </select>
+  <!-- 手機版：下拉選單 -->
+  <select id="fontSizeSelector" onchange="changeFontSize(this.value)">
+    <option value="small">小</option>
+    <option value="medium" selected>中</option>
+    <option value="large">大</option>
+  </select>
 
-    <button onclick="toggleTheme()">切換主題</button>
-  </div>
+  <button onclick="toggleTheme()">切換主題</button>
 </div>
 
 <!-- 上一章 / 下一章 -->
@@ -167,7 +167,7 @@ def write_index(chapters):
   </div>
 </div>
 
-<p>12</p>   <!-- 🔹 這裡新增一行文字 "1" -->
+<p>13</p>   <!-- 🔹 這裡新增一行文字 "1" -->
 
 <!-- 控制列 -->
 <div class="controls">

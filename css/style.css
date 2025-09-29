@@ -149,6 +149,14 @@ button:hover { background: #444; }
 }
 #back-to-top:hover { background: #555; }
 
+/* ================= 響應式（桌機模式） ================= */
+/* 桌機版：顯示按鈕，隱藏下拉選單 */
+@media (min-width: 769px) {
+  #fontSizeSelector {
+    display: none !important;
+  }
+}
+
 /* ================= 響應式（手機模式） ================= */
 @media (max-width: 768px) {
   body { font-size: 20px !important; line-height: 1.8; }
@@ -191,7 +199,7 @@ button:hover { background: #444; }
   }
 
   .cover {
-    margin: 0 !important;               /* 清掉桌機版的 margin-right */
+    margin: 0 !important;   /* 清掉桌機版的 margin-right */
   }
 
    /* 內文控制列改成一行左右分佈 */
@@ -248,6 +256,7 @@ button:hover { background: #444; }
 
   /* 章節內文靠左 */
   .content p {
+    font-size: 1em;              /* 跟隨 body 的字體大小 */
     text-align: left !important;
     text-indent: 0 !important;
     line-height: 1.8;
