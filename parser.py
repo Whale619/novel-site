@@ -138,18 +138,7 @@ def write_index(chapters):
   <script src="js/main.js" defer></script>
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
-
 <body>
-
-<!-- 控制列 -->
-<div class="controls">
-  <div class="controls-left">
-    <button onclick="toggleOrder()">切換正序/倒序</button>
-  </div>
-  <div class="controls-right">
-    <button onclick="toggleTheme()">切換主題</button>
-  </div>
-</div>
 
 <div class="book-info">
   <div class="cover">
@@ -170,7 +159,17 @@ def write_index(chapters):
   </div>
 </div>
 
-<p>6</p>   <!-- 🔹 這裡新增一行文字 "1" -->
+<p>7</p>   <!-- 🔹 這裡新增一行文字 "1" -->
+
+<!-- 控制列 -->
+<div class="controls">
+  <div class="controls-left">
+    <button onclick="toggleOrder()">切換正序/倒序</button>
+  </div>
+  <div class="controls-right">
+    <button onclick="toggleTheme()">切換主題</button>
+  </div>
+</div>
 
 <h2>小說目錄</h2>
 <ul id="chapter-list">
