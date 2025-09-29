@@ -163,9 +163,13 @@ button:hover { background: #444; }
   /* 封面與資訊改成上下排列 */
   .book-info {
     display: flex !important;      /* 仍然用 flex */
-    flex-direction: column !important; /* 🔹 強制改為上下排列 */
+    flex-direction: column !important; /* 強制改為上下排列 */
     align-items: center !important;    /* 水平置中 */
     text-align: center !important;     /* 文字置中 */
+  }
+
+  .cover {
+    margin: 0 !important;               /* 清掉桌機版的 margin-right */
   }
 
   /* "返回目錄"固定大小 */
@@ -186,11 +190,12 @@ button:hover { background: #444; }
     margin: 0 auto 15px auto !important;  /* 圖片置中，取消右邊距 */
     display: block;
   }
+  
   .meta {
     width: 100%;
     padding: 0 15px;
-    text-align: left;  /* 作者資訊靠左顯示（如果想要也置中可改成 center） */
-    margin: 0;         /* 移除桌機版的 margin */
+    margin: 0 !important;               /* 清掉桌機版 margin-left */
+    text-align: left;                   /* 如果想置中可以改成 center */
   }
   
   .meta h1 {
