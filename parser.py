@@ -40,6 +40,7 @@ def clean_line(line: str) -> str | None:
     line = line.replace("震動龍", "秦銅龍")
     line = line.replace("李松白", "李松柏")
     line = line.replace("九派一房", "九派一幫")
+    line = line.replace("白千", "白天")
     line = line.replace("!", "！")
     line = line.replace("?", "？")
 
