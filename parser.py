@@ -23,7 +23,7 @@ def clean_line(line: str) -> str | None:
     if re.search(r"漢\s*化", line) or "閒魚" in line: return None
     if "@雨" in line: return None
     if re.fullmatch(r"[A-Za-z0-9]+", line): return None  # 跳過純英數字
-    if re.search(r"一。", line) in line: return None
+    if "一。" in line: return None
 
     # 特殊字替換
     line = line.replace("清明", "青明")
