@@ -47,6 +47,7 @@ def clean_line(line: str) -> str | None:
     line = line.replace("森藍", "森然")
     line = line.replace("事故", "師姑")
     line = line.replace("白晝", "白天")
+    line = line.replace("青明道場", "青明道長")
     line = line.replace("初三", "草三")
     line = line.replace("四敗", "四霸")
     line = line.replace("死牌聯", "四霸聯")
